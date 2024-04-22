@@ -1,4 +1,4 @@
-class Ordenacao:
+class quickSort:
     def quickSort(self, lista, primeiraPosicao, ultimaPosicao):
 
         #pivo = lista[primeiraPosicao]
