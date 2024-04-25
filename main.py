@@ -1,16 +1,18 @@
 from MetodosOrdenacao.quickSort import quickSort
+from MetodosOrdenacao.bubbleSort import bubbleSort
 import timeit
 
- = quickSort()
+quickSort = quickSort()
+bubbleSort = bubbleSort()
 
 lista = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+lista2 = [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 ultimaPos = len(lista) - 1
 
-listaOrdenada = ordenacao.quickSort(lista, 0, ultimaPos)
+listaOrdenadaQuick = quickSort.quickSort(lista, 0, ultimaPos)
 
-tempoExecucao = timeit.timeit(lambda: ordenacao.quickSort(lista, 0, ultimaPos), number=10000)
+listaOrdenadaBubble = bubbleSort.bubbleSort(lista2)
 
-print(f"Tempo de execução: {round(tempoExecucao, 5)} segundos")
-
-print(listaOrdenada)
+print(listaOrdenadaQuick)
+print(listaOrdenadaBubble)
