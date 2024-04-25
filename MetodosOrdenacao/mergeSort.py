@@ -1,5 +1,5 @@
 class mergeSort:
-    def mergesort(lista, inicio=0, fim=None):
+    def mergesort(self, lista, inicio=0, fim=None):
         if fim is None:
             fim = len(lista)
         if(fim - inicio > 1):
@@ -8,7 +8,7 @@ class mergeSort:
             mergesort(lista, meio, fim)
             merge(lista, inicio, meio, fim)
 
-    def merge(lista, inicio, meio, fim):
+    def merge(self, lista, inicio, meio, fim):
         esquerda = lista[inicio:meio]
         direita = lista[meio:fim]
         e, d = 0, 0
