@@ -15,7 +15,7 @@ bubbleSort = bubbleSort()
 mergeSort = mergeSort()
 quickSort = quickSort()
 radixSort = radixSort()
-selectionSort = selectionSort
+selectionSort = selectionSort()
 shellSort = shellSort()
 
 
