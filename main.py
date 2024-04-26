@@ -1,6 +1,6 @@
 from MetodosOrdenacao.bubbleSort import bubbleSort
-#from MetodosOrdenacao.heapSort import heapSort
-#from MetodosOrdenacao.insertionSort import insertionSort
+from MetodosOrdenacao.heapSort import heapSort
+from MetodosOrdenacao.insertionSort import insertionSort
 from MetodosOrdenacao.mergeSort import mergeSort
 from MetodosOrdenacao.quickSort import quickSort
 from MetodosOrdenacao.radixSort import radixSort
@@ -10,8 +10,8 @@ from MetodosOrdenacao.shellSort import shellSort
 import timeit
 
 bubbleSort = bubbleSort()
-#heapSort = heapSort()
-#insertionSort = insertionSort()
+heapSort = heapSort()
+insertionSort = insertionSort()
 mergeSort = mergeSort()
 quickSort = quickSort()
 radixSort = radixSort()
@@ -22,11 +22,12 @@ shellSort = shellSort()
 lista = [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 ultimaPos = len(lista) - 1
+
 listaOrdenadaBubble = bubbleSort.bubbleSort(lista)
 
-#listaOrdenadaHeap = heapSort.heapSort(lista)
+listaOrdenadaHeap = heapSort.heapSort(lista)
 
-#listaOrdenadaInsertion = insertionSort.insertionSort(lista)
+listaOrdenadaInsertion = insertionSort.insertionSort(lista)
 
 listaOrdenadaMerge = mergeSort.mergeSort(lista)
 
@@ -38,7 +39,11 @@ listaOrdenadaSelection = selectionSort.selectionSort(lista)
 
 listaOrdenadaShell = shellSort.shellSort(lista)
 
-
-
-
-print(listaOrdenadaSelection)
+print("BubbleSort: ", listaOrdenadaBubble)
+print("HeapSort: ", listaOrdenadaHeap)
+print("InsertionSort: ", listaOrdenadaInsertion)
+print("MergeSort: ", listaOrdenadaMerge)
+print("QuickSort: ", listaOrdenadaQuick)
+print("RadixSort: ", listaOrdenadaRadix)
+print("SelectionSort: ", listaOrdenadaSelection)
+print("ShellSort: ", listaOrdenadaShell)
