@@ -1,27 +1,37 @@
 class mergeSort:
-    def mergesort(self, lista, inicio=0, fim=None):
-        if fim is None:
-            fim = len(lista)
-        if(fim - inicio > 1):
-            meio = (fim + inicio)//2
-            mergesort(lista, inicio, meio)
-            mergesort(lista, meio, fim)
-            merge(lista, inicio, meio, fim)
+    def mergeSort(self, arr):
+        # Verifica se a lista possui mais de um elemento
+        if len(arr) > 1:
 
-    def merge(self, lista, inicio, meio, fim):
-        esquerda = lista[inicio:meio]
-        direita = lista[meio:fim]
-        e, d = 0, 0
-        for k in range(inicio, fim):
-            if e >= len(esquerda):
-                lista[k] = direita[d]
-                d = d + 1
-            elif d >= len(direita):
-                lista[k] = esquerda[e]
-                e = e + 1
-            elif esquerda[e] < direita[d]:
-                lista[k] = esquerda[e]
-                e = e + 1
-            else:
-                lista[k] = direita[d]
-                d = d + 1
+            meio = len(arr) // 2 # Pega o a posição central do array
+            esquerda = arr[:meio]  # Separa a metade esquerda da lista
+            direita = arr[meio:]   # Separa a metade direita da lista
+
+            # Ordena recursivamente as duas metades
+            self.mergeSort(esquerda)
+            self.mergeSort(direita)
+
+            # Junta as duas metades ordenadas
+            i = j = k = 0
+            while i < len(esquerda) and j < len(direita):
+                if esquerda[i] < direita[j]:
+                    arr[k] = esquerda[i]
+                    i += 1
+                else:
+                    arr[k] = direita[j]
+                    j += 1
+                k += 1
+
+            # Adiciona quaisquer elementos restantes da metade esquerda
+            while i < len(esquerda):
+                arr[k] = esquerda[i]
+                i += 1
+                k += 1
+
+            # Adiciona quaisquer elementos restantes da metade direita
+            while j < len(direita):
+                arr[k] = direita[j]
+                j += 1
+                k += 1
+
+        return arr
