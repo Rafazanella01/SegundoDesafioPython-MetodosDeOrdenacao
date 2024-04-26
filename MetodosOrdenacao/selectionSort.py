@@ -1,5 +1,5 @@
 class selectionSort:
-    def selectionSort(vetor):
+    def selectionSort(self, vetor):
         tamanho = len(vetor)
         i = 0
         while(i < (tamanho - 1)):          #Utiliza While no lugar do for
