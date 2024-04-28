@@ -7,7 +7,8 @@ from MetodosOrdenacao.radixSort import radixSort
 from MetodosOrdenacao.selectionSort import selectionSort
 from MetodosOrdenacao.shellSort import shellSort
 from listas.lista1k import lista1k
-
+from listas.lista50k import lista50k
+from geraGrafico import geraGrafico
 import timeit
 
 bubbleSort = bubbleSort()
@@ -18,9 +19,12 @@ quickSort = quickSort()
 radixSort = radixSort()
 selectionSort = selectionSort()
 shellSort = shellSort()
-list = lista1k()
+list1k = lista1k()
+list50k = lista50k()
+grafico = geraGrafico()
 
-lista = list.lista1k()
+#lista = list1k.lista1k()
+lista = list50k.lista50k()
 
 ultimaPos = len(lista) - 1
 
@@ -81,3 +85,29 @@ print ("Tempo radix:", tempoExecucaoRadix, "segundos")
 print ("Tempo selection:", tempoExecucaoSelection, "segundos")
 
 print ("Tempo shell:", tempoExecucaoShell, "segundos")
+
+# Lista com os tempos de execução
+listaTempoExecucao = [
+    tempoExecucaoBubble,
+    tempoExecucaoHeap,
+    tempoExecucaoInsertion,
+    tempoExecucaoMerge,
+    tempoExecucaoQuick,
+    tempoExecucaoRadix,
+    tempoExecucaoSelection,
+    tempoExecucaoShell
+]
+
+# Nomes dos algoritmos de ordenação
+descricaoAlgoritmos = [
+    "BubbleSort",
+    "HeapSort",
+    "InsertionSort",
+    "MergeSort",
+    "QuickSort",
+    "RadixSort",
+    "SelectionSort",
+    "ShellSort"
+]
+
+grafico.geraGrafico(descricaoAlgoritmos, listaTempoExecucao)
