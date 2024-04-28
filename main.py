@@ -67,3 +67,17 @@ tempoExecucaoShell = timeit.timeit(lambda: shellSort.shellSort(lista), number=10
 
 
 print ("Tempo bubble:", tempoExecucaoBubble, "segundos")
+
+print ("Tempo heap:", tempoExecucaoHeap, "segundos")
+
+print ("Tempo insertion:", tempoExecucaoInsertion, "segundos")
+
+print ("Tempo merge:", tempoExecucaoMerge, "segundos")
+
+print ("Tempo quick:", tempoExecucaoQuick, "segundos")
+
+print ("Tempo radix:", tempoExecucaoRadix, "segundos")
+
+print ("Tempo selection:", tempoExecucaoSelection, "segundos")
+
+print ("Tempo shell:", tempoExecucaoShell, "segundos")
