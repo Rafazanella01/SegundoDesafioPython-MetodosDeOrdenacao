@@ -8,6 +8,7 @@ from MetodosOrdenacao.selectionSort import selectionSort
 from MetodosOrdenacao.shellSort import shellSort
 from listas.lista1k import lista1k
 from listas.lista50k import lista50k
+from listas.lista100k import lista100k
 from geraGrafico import geraGrafico
 import timeit
 
@@ -21,10 +22,12 @@ selectionSort = selectionSort()
 shellSort = shellSort()
 list1k = lista1k()
 list50k = lista50k()
+list100k = lista100k()
 grafico = geraGrafico()
 
-lista = list1k.lista1k()
+#lista = list1k.lista1k()
 #lista = list50k.lista50k()
+lista = list100k.lista100k()
 
 ultimaPos = len(lista) - 1
 
