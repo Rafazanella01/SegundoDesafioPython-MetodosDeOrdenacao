@@ -5,4 +5,4 @@ class lista100k:
         for _ in range(99999):
             novo = random.randint(-100,99999)
             lista100k.append(novo)
-        return lista1000k
+        return lista100k
