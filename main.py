@@ -23,8 +23,8 @@ list1k = lista1k()
 list50k = lista50k()
 grafico = geraGrafico()
 
-#lista = list1k.lista1k()
-lista = list50k.lista50k()
+lista = list1k.lista1k()
+#lista = list50k.lista50k()
 
 ultimaPos = len(lista) - 1
 
@@ -53,21 +53,21 @@ ultimaPos = len(lista) - 1
 #print("SelectionSort: ", listaOrdenadaSelection)
 #print("ShellSort: ", listaOrdenadaShell)
 
-tempoExecucaoBubble = timeit.timeit(lambda: bubbleSort.bubbleSort(lista), number=10000)
+tempoExecucaoBubble = timeit.timeit(lambda: bubbleSort.bubbleSort(lista), number=100)
 
-tempoExecucaoHeap = timeit.timeit(lambda: heapSort.heapSort(lista), number=10000)
+tempoExecucaoHeap = timeit.timeit(lambda: heapSort.heapSort(lista), number=100)
 
-tempoExecucaoInsertion = timeit.timeit(lambda: insertionSort.insertionSort(lista), number=10000)
+tempoExecucaoInsertion = timeit.timeit(lambda: insertionSort.insertionSort(lista), number=100)
 
-tempoExecucaoMerge = timeit.timeit(lambda: mergeSort.mergeSort(lista), number=10000)
+tempoExecucaoMerge = timeit.timeit(lambda: mergeSort.mergeSort(lista), number=100)
 
-tempoExecucaoQuick = timeit.timeit(lambda: quickSort.quickSort(lista, 0, ultimaPos), number=10000)
+tempoExecucaoQuick = timeit.timeit(lambda: quickSort.quickSort(lista, 0, ultimaPos), number=100)
 
-tempoExecucaoRadix = timeit.timeit(lambda: radixSort.radixSort(lista), number=10000)
+tempoExecucaoRadix = timeit.timeit(lambda: radixSort.radixSort(lista), number=100)
 
-tempoExecucaoSelection = timeit.timeit(lambda: selectionSort.selectionSort(lista), number=10000)
+tempoExecucaoSelection = timeit.timeit(lambda: selectionSort.selectionSort(lista), number=100)
 
-tempoExecucaoShell = timeit.timeit(lambda: shellSort.shellSort(lista), number=10000)
+tempoExecucaoShell = timeit.timeit(lambda: shellSort.shellSort(lista), number=100)
 
 
 print ("Tempo bubble:", tempoExecucaoBubble, "segundos")
