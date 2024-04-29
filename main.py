@@ -25,13 +25,13 @@ list50k = lista50k()
 list100k = lista100k()
 grafico = geraGrafico()
 
-#lista = list1k.lista1k()
+lista = list1k.lista1k()
 #lista = list50k.lista50k()
-lista = list100k.lista100k()
+#lista = list100k.lista100k()
 
 ultimaPos = len(lista) - 1
 
-#listaOrdenadaBubble = bubbleSort.bubbleSort(lista)
+listaOrdenadaBubble, contador = bubbleSort.bubbleSort(lista)
 
 #listaOrdenadaHeap = heapSort.heapSort(lista)
 
@@ -47,7 +47,8 @@ ultimaPos = len(lista) - 1
 
 #listaOrdenadaShell = shellSort.shellSort(lista)
 
-#print("BubbleSort: ", listaOrdenadaBubble)
+print("BubbleSort: ", listaOrdenadaBubble)
+print("Contador BubbleSort: ", contador)
 #print("HeapSort: ", listaOrdenadaHeap)
 #print("InsertionSort: ", listaOrdenadaInsertion)
 #print("MergeSort: ", listaOrdenadaMerge)

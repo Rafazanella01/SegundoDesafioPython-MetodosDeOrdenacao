@@ -1,5 +1,6 @@
 class bubbleSort:   
     def bubbleSort(self, vetor):
+        contTroca=0
         n = len(vetor)
         troca = True
         while troca:
@@ -8,5 +9,6 @@ class bubbleSort:
                 if vetor[i] > vetor[i+1]:
                     vetor[i], vetor[i+1] = vetor[i+1], vetor[i]
                     troca = True
+                    contTroca += 1
             n -= 1
-        return vetor
+        return vetor, contTroca
