@@ -36,10 +36,12 @@ list100k = lista100k()
 grafico = geraGrafico()
 
 #Salvando cada tipo de lista em cada variável
-lista = list1k.lista1k()
+#lista = list1k.lista1k()
 #lista = list10k.lista10k()
-#lista = list50k.lista50k()
+lista = list50k.lista50k()
 #lista = list100k.lista100k()
+
+#print(lista)
 
 ultimaPos = len(lista) - 1
 
