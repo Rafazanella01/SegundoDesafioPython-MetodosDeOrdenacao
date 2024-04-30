@@ -1,32 +1,39 @@
 class radixSort:
-    def counting_sort(self, array, exp):
-        n = len(array)    # Obtendo o tamanho da lista
-        output = [0] * n    # Inicializando uma lista de saída com o mesmo tamanho da lista de entrada
-        count = [0] * 10    # Inicializando uma lista de contagem para cada dígito de 0 a 9
+    def counting_sort(self, arr, exp, contComparacao, contTroca):
+        n = len(arr)
+        output = [0] * n
+        count = [0] * 10
 
-
-        for i in range(n):  # Contando a ocorrência de cada dígito na posição 'exp' e armazenando na lista de contagem
-            index = array[i] // exp  # Determinando o índice com base no dígito na posição 'exp'
+        for i in range(n):
+            index = arr[i] // exp
             count[index % 10] += 1
 
-
-        for i in range(1, 10):  # Atualizando a lista de contagem para conter as posições corretas dos elementos
+        for i in range(1, 10):
             count[i] += count[i - 1]
 
-        i = n - 1   # Construindo a lista de saída usando as posições corretas dos elementos
+        i = n - 1
         while i >= 0:
-            index = array[i] // exp  # Determinando o índice com base no dígito na posição 'exp'
-            output[count[index % 10] - 1] = array[i]
+            index = arr[i] // exp
+            output[count[index % 10] - 1] = arr[i]
             count[index % 10] -= 1
             i -= 1
 
-        for i in range(n):  # Copiando os elementos ordenados de volta para a lista original
-            array[i] = output[i]
+        i = 0
+        for i in range(0, len(arr)):
+            contComparacao += 1
+            if arr[i] != output[i]:
+                contTroca += 1
+            arr[i] = output[i]
 
-    def radixSort(self, lista):
-        max_num = max(lista)  # Encontrando o maior número na lista pela função max()
+        return arr, contComparacao, contTroca
+
+    def radixSort(self, arr):
+        contComparacao = 0
+        contTroca = 0
+        max_num = max(arr)
         exp = 1
-        while max_num // exp > 0:   # Iterando até que o dígito mais significativo do maior número seja processado
-            self.counting_sort(lista, exp) # Chamando o counting_sort para ordenar os elementos com base no dígito na posição 'exp'
+        while max_num // exp > 0:
+            arr, contComparacao, contTroca = self.counting_sort(arr, exp, contComparacao, contTroca)
             exp *= 10
-        return lista
+
+        return arr, contComparacao, contTroca

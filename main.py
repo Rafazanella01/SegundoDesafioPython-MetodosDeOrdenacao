@@ -36,45 +36,74 @@ list100k = lista100k()
 grafico = geraGrafico()
 
 #Salvando cada tipo de lista em cada variável
-#lista = list1k.lista1k()
+lista = list1k.lista1k()
 #lista = list10k.lista10k()
-lista = list50k.lista50k()
+#lista = list50k.lista50k()
 #lista = list100k.lista100k()
 
 ultimaPos = len(lista) - 1
 
-"""
-listaOrdenadaBubble, contador = bubbleSort.bubbleSort(lista)
-listaOrdenadaHeap = heapSort.heapSort(lista)
+#Variáveis com as listas ordenadas e contadores de trocas e comparações
+listaOrdenadaBubble, contComparacaoBubble, contTrocaBubble = bubbleSort.bubbleSort(lista)
+listaOrdenadaHeap, contComparacaoHeap, contTrocaHeap = heapSort.heapSort(lista)
+listaOrdenadaInsertion, contComparacaoInsertion, contTrocaInsertion = insertionSort.insertionSort(lista)
+listaOrdenadaMerge, contComparacaoMerge, contTrocaMerge = mergeSort.mergeSort(lista)
+listaOrdenadaQuick, contComparacaoQuick, contTrocaQuick = quickSort.quickSort(lista, 0, ultimaPos)
+listaOrdenadaRadix, contComparacaoRadix, contTrocaRadix = radixSort.radixSort(lista)
+listaOrdenadaSelection, contComparacaoSelection, contTrocaSelection = selectionSort.selectionSort(lista)
+listaOrdenadaShell, contComparacaoShell, contTrocaShell = shellSort.shellSort(lista)
 
-listaOrdenadaInsertion = insertionSort.insertionSort(lista)
-listaOrdenadaMerge = mergeSort.mergeSort(lista)
-listaOrdenadaQuick = quickSort.quickSort(lista, 0, ultimaPos)
-listaOrdenadaRadix = radixSort.radixSort(lista)
-listaOrdenadaSelection = selectionSort.selectionSort(lista)
-listaOrdenadaShell = shellSort.shellSort(lista)
+#Exibindo as listas ordenadas
 
+#BubbleSort
 print("BubbleSort: ", listaOrdenadaBubble)
-print("Contador BubbleSort: ", contador)
+print("Contador de comparações BubbleSort: ", contComparacaoBubble)
+print("Contador de trocas BubbleSort: ", contTrocaBubble)
 
+#HeapSort
 print("HeapSort: ", listaOrdenadaHeap)
+print("Contador de comparações HeapSort: ", contComparacaoHeap)
+print("Contador de trocas HeapSort: ", contTrocaHeap)
+
+#InsertionSort
 print("InsertionSort: ", listaOrdenadaInsertion)
+print("Contador de comparações InsertionSort: ", contComparacaoInsertion)
+print("Contador de trocas InsertionSort: ", contTrocaInsertion)
+
+#MergeSort
 print("MergeSort: ", listaOrdenadaMerge)
+print("Contador de comparações MergeSort: ", contComparacaoMerge)
+print("Contador de trocas MergeSort: ", contTrocaMerge)
+
+#QuickSort
 print("QuickSort: ", listaOrdenadaQuick)
+print("Contador de comparações QuickSort: ", contComparacaoQuick)
+print("Contador de trocas QuickSort: ", contTrocaQuick)
+
+#RadixSort
 print("RadixSort: ", listaOrdenadaRadix)
+print("Contador de comparações RadixSort: ", contComparacaoRadix)
+print("Contador de trocas RadixSort: ", contTrocaRadix)
+
+#SelectionSort
 print("SelectionSort: ", listaOrdenadaSelection)
+print("Contador de comparações SelectionSort: ", contComparacaoSelection)
+print("Contador de trocas SelectionSort: ", contTrocaSelection)
+
+#ShellSort
 print("ShellSort: ", listaOrdenadaShell)
-"""
+print("Contador de comparações ShellSort: ", contComparacaoShell)
+print("Contador de trocas ShellSort: ", contTrocaShell)
 
 #Tempo de execução de cada metodo
-tempoExecucaoBubble = timeit.timeit(lambda: bubbleSort.bubbleSort(lista), number=1)
-tempoExecucaoHeap = timeit.timeit(lambda: heapSort.heapSort(lista), number=1)
-tempoExecucaoInsertion = timeit.timeit(lambda: insertionSort.insertionSort(lista), number=1)
-tempoExecucaoMerge = timeit.timeit(lambda: mergeSort.mergeSort(lista), number=1)
-tempoExecucaoQuick = timeit.timeit(lambda: quickSort.quickSort(lista, 0, ultimaPos), number=1)
-tempoExecucaoRadix = timeit.timeit(lambda: radixSort.radixSort(lista), number=1)
-tempoExecucaoSelection = timeit.timeit(lambda: selectionSort.selectionSort(lista), number=1)
-tempoExecucaoShell = timeit.timeit(lambda: shellSort.shellSort(lista), number=1)
+tempoExecucaoBubble = timeit.timeit(lambda: bubbleSort.bubbleSort(lista), number=10)
+tempoExecucaoHeap = timeit.timeit(lambda: heapSort.heapSort(lista), number=10)
+tempoExecucaoInsertion = timeit.timeit(lambda: insertionSort.insertionSort(lista), number=10)
+tempoExecucaoMerge = timeit.timeit(lambda: mergeSort.mergeSort(lista), number=10)
+tempoExecucaoQuick = timeit.timeit(lambda: quickSort.quickSort(lista, 0, ultimaPos), number=10)
+tempoExecucaoRadix = timeit.timeit(lambda: radixSort.radixSort(lista), number=10)
+tempoExecucaoSelection = timeit.timeit(lambda: selectionSort.selectionSort(lista), number=10)
+tempoExecucaoShell = timeit.timeit(lambda: shellSort.shellSort(lista), number=10)
 
 #Exibindo tempo de execução
 print ("Tempo bubble:", tempoExecucaoBubble, "segundos")
@@ -110,4 +139,5 @@ descricaoAlgoritmos = [
     "ShellSort"
 ]
 
+#Chamando a função pra exibir o grafico e passando as listas com o tempo de execução e a descrição dos metodos
 grafico.geraGrafico(descricaoAlgoritmos, listaTempoExecucao)
