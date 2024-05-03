@@ -36,15 +36,16 @@ list100k = lista100k()
 grafico = geraGrafico()
 
 #Salvando cada tipo de lista em cada variável
-#lista = list1k.lista1k()
+lista = list1k.lista1k()
 #lista = list10k.lista10k()
-lista = list50k.lista50k()
+#lista = list50k.lista50k()
 #lista = list100k.lista100k()
 
 #print(lista)
 
 ultimaPos = len(lista) - 1
 
+"""
 #Variáveis com as listas ordenadas e contadores de trocas e comparações
 listaOrdenadaBubble, contComparacaoBubble, contTrocaBubble = bubbleSort.bubbleSort(lista)
 listaOrdenadaHeap, contComparacaoHeap, contTrocaHeap = heapSort.heapSort(lista)
@@ -96,6 +97,7 @@ print("Contador de trocas SelectionSort: ", contTrocaSelection)
 print("ShellSort: ", listaOrdenadaShell)
 print("Contador de comparações ShellSort: ", contComparacaoShell)
 print("Contador de trocas ShellSort: ", contTrocaShell)
+"""
 
 #Tempo de execução de cada metodo
 tempoExecucaoBubble = timeit.timeit(lambda: bubbleSort.bubbleSort(lista), number=10)
