@@ -12,6 +12,9 @@ class insertionSort:
                 lista[j + 1] = lista[j]
                 j -= 1
                 contTrocas += 1
+            # Conta a comparação que quebra o laço while
+            if j >= 0:
+                contComparacoes += 1
             lista[j + 1] = chave
 
         return lista, contComparacoes, contTrocas
