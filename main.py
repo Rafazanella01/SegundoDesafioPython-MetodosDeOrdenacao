@@ -13,7 +13,12 @@ from listas.lista1k import lista1k
 from listas.lista10k import lista10k
 from listas.lista50k import lista50k
 from listas.lista100k import lista100k
+from listas.listaOrdenada1k import listaOrdenada1k
+from listas.listaOrdenada10k import listaOrdenada10k
+from listas.listaOrdenada50k import listaOrdenada50k
+from listas.listaOrdenada100k import listaOrdenada100k
 
+#Instaciando graficos e timeit
 from geraGrafico import geraGrafico
 import timeit
 
@@ -32,14 +37,23 @@ list1k = lista1k()
 list10k = lista10k()
 list50k = lista50k()
 list100k = lista100k()
+list1kOrdenada = listaOrdenada1k()
+list10kOrdenada = listaOrdenada10k()
+list50kOrdenada = listaOrdenada50k()
+list100kOrdenada = listaOrdenada100k()
 
+#Instanciando Graficos
 grafico = geraGrafico()
 
 #Salvando cada tipo de lista em cada variável
 #lista = list1k.lista1k()
 #lista = list10k.lista10k()
-lista = list50k.lista50k()
+#lista = list50k.lista50k()
 #lista = list100k.lista100k()
+#lista = list1kOrdenada.listaOrdenada1k()
+lista = list10kOrdenada.listaOrdenada10k()
+#lista = list50kOrdenada.listaOrdenada50k()
+#lista = list100kOrdenada.listaOrdenada100k()
 
 #print(lista)
 
@@ -110,6 +124,7 @@ tempoExecucaoSelection = timeit.timeit(lambda: selectionSort.selectionSort(lista
 tempoExecucaoShell = timeit.timeit(lambda: shellSort.shellSort(lista.copy()), number=3)
 
 #Exibindo tempo de execução
+print ("")
 print ("Tempo bubble:", tempoExecucaoBubble, "segundos")
 print ("Tempo heap:", tempoExecucaoHeap, "segundos")
 print ("Tempo insertion:", tempoExecucaoInsertion, "segundos")
@@ -118,7 +133,30 @@ print ("Tempo quick:", tempoExecucaoQuick, "segundos")
 print ("Tempo radix:", tempoExecucaoRadix, "segundos")
 print ("Tempo selection:", tempoExecucaoSelection, "segundos")
 print ("Tempo shell:", tempoExecucaoShell, "segundos")
+print ("")
 
+#Exibindo contagem de comparações
+print ("Comparações bubble:", contComparacaoBubble, "comparações")
+print ("Comparações heap:", contComparacaoHeap, "comparações")
+print ("Comparações insertion:", contComparacaoInsertion, "comparações")
+print ("Comparações merge:", contComparacaoMerge, "comparações")
+print ("Comparações quick:", contComparacaoQuick, "comparações")
+print ("Comparações radix:", contComparacaoRadix, "comparações")
+print ("Comparações selection:", contComparacaoSelection, "comparações")
+print ("Comparações shell:", contComparacaoShell, "comparações")
+print ("")
+
+#Exibindo contagem de trocas
+print ("Trocas bubble:", contTrocaBubble, "trocas")
+print ("Trocas heap:", contTrocaHeap, "trocas")
+print ("Trocas insertion:", contTrocaInsertion, "trocas")
+print ("Trocas merge:", contTrocaMerge, "trocas")
+print ("Trocas quick:", contTrocaQuick, "trocas")
+print ("Trocas radix:", contTrocaRadix, "trocas")
+print ("Trocas selection:", contTrocaSelection, "trocas")
+print ("Trocas shell:", contTrocaShell, "trocas")
+
+# Lista com as medias de comparações
 listaContagemComparacao = [
     contComparacaoBubble,
     contComparacaoHeap,
@@ -130,6 +168,7 @@ listaContagemComparacao = [
     contComparacaoShell
 ]
 
+# Lista com as medias de trocas
 listaContagemTroca = [
     contTrocaBubble,
     contTrocaHeap,
@@ -166,4 +205,10 @@ descricaoAlgoritmos = [
 ]
 
 #Chamando a função pra exibir o grafico e passando as listas com o tempo de execução e a descrição dos metodos
-grafico.geraGrafico(descricaoAlgoritmos, listaTempoExecucao)
+grafico.geraGraficoTempExec(descricaoAlgoritmos, listaTempoExecucao)
+
+# Chamando a função pra exibir o grafico e passando as listas com a contagem de comparações e a descrição dos metodos
+grafico.geraGraficoComparacoes(descricaoAlgoritmos, listaContagemComparacao)
+
+# Chamando a função pra exibir o grafico e passando as listas com a contagem de trocas e a descrição dos metodos
+grafico.geraGraficoTrocas(descricaoAlgoritmos, listaContagemTroca)
