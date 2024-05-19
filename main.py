@@ -36,26 +36,26 @@ list100k = lista100k()
 grafico = geraGrafico()
 
 #Salvando cada tipo de lista em cada variável
-lista = list1k.lista1k()
+#lista = list1k.lista1k()
 #lista = list10k.lista10k()
-#lista = list50k.lista50k()
+lista = list50k.lista50k()
 #lista = list100k.lista100k()
 
 #print(lista)
 
 ultimaPos = len(lista) - 1
 
-"""
 #Variáveis com as listas ordenadas e contadores de trocas e comparações
-listaOrdenadaBubble, contComparacaoBubble, contTrocaBubble = bubbleSort.bubbleSort(lista)
-listaOrdenadaHeap, contComparacaoHeap, contTrocaHeap = heapSort.heapSort(lista)
-listaOrdenadaInsertion, contComparacaoInsertion, contTrocaInsertion = insertionSort.insertionSort(lista)
-listaOrdenadaMerge, contComparacaoMerge, contTrocaMerge = mergeSort.mergeSort(lista)
-listaOrdenadaQuick, contComparacaoQuick, contTrocaQuick = quickSort.quickSort(lista, 0, ultimaPos)
-listaOrdenadaRadix, contComparacaoRadix, contTrocaRadix = radixSort.radixSort(lista)
-listaOrdenadaSelection, contComparacaoSelection, contTrocaSelection = selectionSort.selectionSort(lista)
-listaOrdenadaShell, contComparacaoShell, contTrocaShell = shellSort.shellSort(lista)
+listaOrdenadaBubble, contComparacaoBubble, contTrocaBubble = bubbleSort.bubbleSort(lista.copy())
+listaOrdenadaHeap, contComparacaoHeap, contTrocaHeap = heapSort.heapSort(lista.copy())
+listaOrdenadaInsertion, contComparacaoInsertion, contTrocaInsertion = insertionSort.insertionSort(lista.copy())
+listaOrdenadaMerge, contComparacaoMerge, contTrocaMerge = mergeSort.mergeSort(lista.copy())
+listaOrdenadaQuick, contComparacaoQuick, contTrocaQuick = quickSort.quickSort(lista.copy(), 0, ultimaPos)
+listaOrdenadaRadix, contComparacaoRadix, contTrocaRadix = radixSort.radixSort(lista.copy())
+listaOrdenadaSelection, contComparacaoSelection, contTrocaSelection = selectionSort.selectionSort(lista.copy())
+listaOrdenadaShell, contComparacaoShell, contTrocaShell = shellSort.shellSort(lista.copy())
 
+"""
 #Exibindo as listas ordenadas
 
 #BubbleSort
@@ -100,14 +100,14 @@ print("Contador de trocas ShellSort: ", contTrocaShell)
 """
 
 #Tempo de execução de cada metodo
-tempoExecucaoBubble = timeit.timeit(lambda: bubbleSort.bubbleSort(lista), number=10)
-tempoExecucaoHeap = timeit.timeit(lambda: heapSort.heapSort(lista), number=10)
-tempoExecucaoInsertion = timeit.timeit(lambda: insertionSort.insertionSort(lista), number=10)
-tempoExecucaoMerge = timeit.timeit(lambda: mergeSort.mergeSort(lista), number=10)
-tempoExecucaoQuick = timeit.timeit(lambda: quickSort.quickSort(lista, 0, ultimaPos), number=10)
-tempoExecucaoRadix = timeit.timeit(lambda: radixSort.radixSort(lista), number=10)
-tempoExecucaoSelection = timeit.timeit(lambda: selectionSort.selectionSort(lista), number=10)
-tempoExecucaoShell = timeit.timeit(lambda: shellSort.shellSort(lista), number=10)
+tempoExecucaoBubble = timeit.timeit(lambda: bubbleSort.bubbleSort(lista.copy()), number=3)
+tempoExecucaoHeap = timeit.timeit(lambda: heapSort.heapSort(lista.copy()), number=3)
+tempoExecucaoInsertion = timeit.timeit(lambda: insertionSort.insertionSort(lista.copy()), number=3)
+tempoExecucaoMerge = timeit.timeit(lambda: mergeSort.mergeSort(lista.copy()), number=3)
+tempoExecucaoQuick = timeit.timeit(lambda: quickSort.quickSort(lista.copy(), 0, ultimaPos), number=3)
+tempoExecucaoRadix = timeit.timeit(lambda: radixSort.radixSort(lista.copy()), number=3)
+tempoExecucaoSelection = timeit.timeit(lambda: selectionSort.selectionSort(lista.copy()), number=3)
+tempoExecucaoShell = timeit.timeit(lambda: shellSort.shellSort(lista.copy()), number=3)
 
 #Exibindo tempo de execução
 print ("Tempo bubble:", tempoExecucaoBubble, "segundos")
@@ -119,16 +119,38 @@ print ("Tempo radix:", tempoExecucaoRadix, "segundos")
 print ("Tempo selection:", tempoExecucaoSelection, "segundos")
 print ("Tempo shell:", tempoExecucaoShell, "segundos")
 
-# Lista com os tempos de execução
+listaContagemComparacao = [
+    contComparacaoBubble,
+    contComparacaoHeap,
+    contComparacaoInsertion,
+    contComparacaoMerge,
+    contComparacaoQuick,
+    contComparacaoRadix,
+    contComparacaoSelection,
+    contComparacaoShell
+]
+
+listaContagemTroca = [
+    contTrocaBubble,
+    contTrocaHeap,
+    contTrocaInsertion,
+    contTrocaMerge,
+    contTrocaQuick,
+    contTrocaRadix,
+    contTrocaSelection,
+    contTrocaShell
+]
+
+# Lista com as medias de execução
 listaTempoExecucao = [
-    tempoExecucaoBubble,
-    tempoExecucaoHeap,
-    tempoExecucaoInsertion,
-    tempoExecucaoMerge,
-    tempoExecucaoQuick,
-    tempoExecucaoRadix,
-    tempoExecucaoSelection,
-    tempoExecucaoShell
+    tempoExecucaoBubble     / 3,
+    tempoExecucaoHeap       / 3,
+    tempoExecucaoInsertion  / 3,
+    tempoExecucaoMerge      / 3,
+    tempoExecucaoQuick      / 3,
+    tempoExecucaoRadix      / 3,
+    tempoExecucaoSelection  / 3,
+    tempoExecucaoShell      / 3
 ]
 
 # Nomes dos algoritmos de ordenação
