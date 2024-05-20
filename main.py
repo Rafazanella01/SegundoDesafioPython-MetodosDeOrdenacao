@@ -49,9 +49,9 @@ grafico = geraGrafico()
 #lista = list1k.lista1k()
 #lista = list10k.lista10k()
 #lista = list50k.lista50k()
-#lista = list100k.lista100k()
+lista = list100k.lista100k()
 #lista = list1kOrdenada.listaOrdenada1k()
-lista = list10kOrdenada.listaOrdenada10k()
+#lista = list10kOrdenada.listaOrdenada10k()
 #lista = list50kOrdenada.listaOrdenada50k()
 #lista = list100kOrdenada.listaOrdenada100k()
 
@@ -198,6 +198,7 @@ descricaoAlgoritmos = [
     "HeapSort",
     "InsertionSort",
     "MergeSort",
+    
     "QuickSort",
     "RadixSort",
     "SelectionSort",
