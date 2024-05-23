@@ -1,4 +1,4 @@
-class insertionSort:
+class InsertionSort:
     def insertionSort(self, lista):
         contComparacoes = 0
         contTrocas = 0

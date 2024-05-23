@@ -1,4 +1,4 @@
-class quickSort:
+class QuickSort:
     def quickSort(self, lista, primeiraPosicao, ultimaPosicao):
         meio = (primeiraPosicao + ultimaPosicao) // 2
         pivo = sorted([lista[primeiraPosicao], lista[meio], lista[ultimaPosicao]])[1]

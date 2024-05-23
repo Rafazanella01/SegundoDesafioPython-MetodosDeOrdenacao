@@ -1,4 +1,4 @@
-class radixSort:
+class RadixSort:
     def counting_sort(self, arr, exp, contComparacao, contTroca):
         n = len(arr)
         output = [0] * n

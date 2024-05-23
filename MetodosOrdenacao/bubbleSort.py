@@ -1,4 +1,4 @@
-class bubbleSort:   
+class BubbleSort:   
     def bubbleSort(self, vetor):
         contComparacoes = 0
         contTrocas = 0

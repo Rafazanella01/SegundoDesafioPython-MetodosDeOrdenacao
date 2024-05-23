@@ -1,4 +1,4 @@
-class mergeSort:
+class MergeSort:
     def mergeSort(self, arr):
         contComparacoes = 0
         contTrocas = 0

@@ -1,4 +1,4 @@
-class heapSort:
+class HeapSort:
     def heapSort(self, arr):
         n = len(arr)
         contComparacoes = 0

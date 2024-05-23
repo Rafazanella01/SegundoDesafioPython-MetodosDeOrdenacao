@@ -1,4 +1,4 @@
-class selectionSort:
+class SelectionSort:
     def selectionSort(self, vetor):
         tamanho = len(vetor)
         contComparacoes = 0

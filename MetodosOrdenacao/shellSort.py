@@ -1,4 +1,4 @@
-class shellSort:
+class ShellSort:
     def shellSort(self, Lista):
         n = len(Lista)
 

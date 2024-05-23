@@ -1,12 +1,12 @@
 #Instanciando os metodos de ordenação
-from MetodosOrdenacao.insertionSort import insertionSort
-from MetodosOrdenacao.selectionSort import selectionSort
-from MetodosOrdenacao.bubbleSort import bubbleSort
-from MetodosOrdenacao.mergeSort import mergeSort
-from MetodosOrdenacao.quickSort import quickSort
-from MetodosOrdenacao.radixSort import radixSort
-from MetodosOrdenacao.shellSort import shellSort
-from MetodosOrdenacao.heapSort import heapSort
+from MetodosOrdenacao.InsertionSort import insertionSort
+from MetodosOrdenacao.SelectionSort import selectionSort
+from MetodosOrdenacao.BubbleSort import bubbleSort
+from MetodosOrdenacao.MergeSort import mergeSort
+from MetodosOrdenacao.QuickSort import quickSort
+from MetodosOrdenacao.RadixSort import radixSort
+from MetodosOrdenacao.ShellSort import shellSort
+from MetodosOrdenacao.HeapSort import heapSort
 
 #Instanciando as listas
 from listas.lista1k import lista1k
