@@ -1,12 +1,12 @@
 #Instanciando os metodos de ordenação
-from MetodosOrdenacao.InsertionSort import insertionSort
-from MetodosOrdenacao.SelectionSort import selectionSort
-from MetodosOrdenacao.BubbleSort import bubbleSort
-from MetodosOrdenacao.MergeSort import mergeSort
-from MetodosOrdenacao.QuickSort import quickSort
-from MetodosOrdenacao.RadixSort import radixSort
-from MetodosOrdenacao.ShellSort import shellSort
-from MetodosOrdenacao.HeapSort import heapSort
+from MetodosOrdenacao.InsertionSort import InsertionSort
+from MetodosOrdenacao.SelectionSort import SelectionSort
+from MetodosOrdenacao.BubbleSort import BubbleSort
+from MetodosOrdenacao.MergeSort import MergeSort
+from MetodosOrdenacao.QuickSort import QuickSort
+from MetodosOrdenacao.RadixSort import RadixSort
+from MetodosOrdenacao.ShellSort import ShellSort
+from MetodosOrdenacao.HeapSort import HeapSort
 
 #Instanciando as listas
 from listas.lista1k import lista1k
@@ -23,14 +23,14 @@ from geraGrafico import geraGrafico
 import timeit
 
 #Instanciando os objetos das classes de cada metodo
-insertionSort = insertionSort()
-selectionSort = selectionSort()
-bubbleSort = bubbleSort()
-mergeSort = mergeSort()
-quickSort = quickSort()
-radixSort = radixSort()
-shellSort = shellSort()
-heapSort = heapSort()
+insertionSort = InsertionSort()
+selectionSort = SelectionSort()
+bubbleSort = BubbleSort()
+mergeSort = MergeSort()
+quickSort = QuickSort()
+radixSort = RadixSort()
+shellSort = ShellSort()
+heapSort = HeapSort()
 
 #Instanciando as classes de cada tipo de lista aleatória
 list1k = lista1k()
