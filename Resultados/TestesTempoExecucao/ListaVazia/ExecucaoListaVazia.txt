@@ -1,0 +1,6 @@
+Tempo bubble: 8.800008799880743e-06 segundos
+Tempo heap: 6.599992047995329e-06 segundos
+Tempo insertion: 2.8999929782003164e-06 segundos
+Tempo merge: 2.4999899324029684e-06 segundos
+Tempo selection: 2.600019797682762e-06 segundos
+Tempo shell: 2.4999899324029684e-06 segundos

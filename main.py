@@ -9,14 +9,7 @@ from MetodosOrdenacao.ShellSort import ShellSort
 from MetodosOrdenacao.HeapSort import HeapSort
 
 #Instanciando as listas
-from listas.lista1k import lista1k
-from listas.lista10k import lista10k
-from listas.lista50k import lista50k
-from listas.lista100k import lista100k
-from listas.listaOrdenada1k import listaOrdenada1k
-from listas.listaOrdenada10k import listaOrdenada10k
-from listas.listaOrdenada50k import listaOrdenada50k
-from listas.listaOrdenada100k import listaOrdenada100k
+from listas.Listas import Listas
 
 #Instaciando graficos e timeit
 from geraGrafico import geraGrafico
@@ -33,27 +26,25 @@ shellSort = ShellSort()
 heapSort = HeapSort()
 
 #Instanciando as classes de cada tipo de lista aleatória
-list1k = lista1k()
-list10k = lista10k()
-list50k = lista50k()
-list100k = lista100k()
-list1kOrdenada = listaOrdenada1k()
-list10kOrdenada = listaOrdenada10k()
-list50kOrdenada = listaOrdenada50k()
-list100kOrdenada = listaOrdenada100k()
+listas = Listas()
 
 #Instanciando Graficos
 grafico = geraGrafico()
 
 #Salvando cada tipo de lista em cada variável
-lista = list1k.lista1k()
-#lista = list10k.lista10k()
-#lista = list50k.lista50k()
-#lista = list100k.lista100k()
-#lista = list1kOrdenada.listaOrdenada1k()
-#lista = list10kOrdenada.listaOrdenada10k()
-#lista = list50kOrdenada.listaOrdenada50k()
-#lista = list100kOrdenada.listaOrdenada100k()
+#lista = listas.lista1k()
+#lista = listas.lista10k()
+#lista = listas.lista50k()
+#lista = listas.lista100k()
+lista = listas.listaOrdenada1k()
+#lista = listas.listaOrdenada10k()
+#lista = listas.listaOrdenada50k()
+#lista = listas.listaOrdenada100k()
+
+#lista = listas.listaRepetida()
+#lista = listas.listaUnicoItem()
+#lista = listas.listaVazia()
+#lista = listas.listaDecrescente()
 
 #print(lista)
 
@@ -69,9 +60,8 @@ listaOrdenadaRadix, contComparacaoRadix, contTrocaRadix = radixSort.radixSort(li
 listaOrdenadaSelection, contComparacaoSelection, contTrocaSelection = selectionSort.selectionSort(lista.copy())
 listaOrdenadaShell, contComparacaoShell, contTrocaShell = shellSort.shellSort(lista.copy())
 
-
 #Exibindo as listas ordenadas
-"""
+
 #BubbleSort
 print("BubbleSort: ", listaOrdenadaBubble)
 print("Contador de comparações BubbleSort: ", contComparacaoBubble)
@@ -111,7 +101,6 @@ print("Contador de trocas SelectionSort: ", contTrocaSelection)
 print("ShellSort: ", listaOrdenadaShell)
 print("Contador de comparações ShellSort: ", contComparacaoShell)
 print("Contador de trocas ShellSort: ", contTrocaShell)
-"""
 
 #Tempo de execução de cada metodo
 tempoExecucaoBubble = timeit.timeit(lambda: bubbleSort.bubbleSort(lista.copy()), number=3)

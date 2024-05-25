@@ -1,0 +1,6 @@
+Comparações bubble: 0 comparações
+Comparações heap: 0 comparações
+Comparações insertion: 0 comparações
+Comparações merge: 0 comparações
+Comparações selection: 0 comparações
+Comparações shell: 0 comparações
