@@ -32,9 +32,9 @@ listas = Listas()
 grafico = geraGrafico()
 
 #Salvando cada tipo de lista em cada variável
-#lista = listas.lista1k()
+lista = listas.lista1k()
 #lista = listas.lista10k()
-lista = listas.lista50k()
+#lista = listas.lista50k()
 #lista = listas.lista100k()
 #lista = listas.listaOrdenada1k()
 #lista = listas.listaOrdenada10k()
